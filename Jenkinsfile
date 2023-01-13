@@ -5,21 +5,14 @@ pipeline {
          stage('Pull') {
               steps {
                  echo "Build stage is running"
-                 git branch: 'main', url: 'https://github.com/RohitKakde27/kubernetes-deployment.git'
+                 git branch: 'main', url: 'https://github.com/samirmaske09/kubernetes-jenkins.git'
                     }
                         }
          
          
          stage("Docker build"){
               steps {
-               sshagent(['docker.']) {
-                     
-                     
-                     sh   '    docker image build -t a .'
-                     sh   '    docker image tag a samirmaske23/a:latest '
-                     sh 'docker login -u samirmaske23 -p Samir@248652'
-                     sh   '    docker image push  samirmaske23/a:latest '
-                                    }
+               echo "build success"
                      }
                               }      
                              
