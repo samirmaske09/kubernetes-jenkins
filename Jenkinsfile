@@ -12,13 +12,12 @@ pipeline {
          
          stage("Docker build"){
               steps {
-                sshagent(['centos']) {
-                    sh 'docker build -t .'
+                    sh 'docker image build .'
  
                                }
 
                      }
-                              }      
+                                  
                              
          
          stage('Test') {
