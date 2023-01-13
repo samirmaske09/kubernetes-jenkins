@@ -12,7 +12,11 @@ pipeline {
          
          stage("Docker build"){
               steps {
-               echo "build success"
+                sshagent(['centos']) {
+                    sh 'docker build -t .'
+ 
+                               }
+
                      }
                               }      
                              
